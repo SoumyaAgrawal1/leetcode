@@ -1,6 +1,11 @@
 class Solution {
 public:
     int getSum(int a, int b) {
-        return log2(pow(2,a) * pow(2,b));
+        while(b!=0){
+            int tmp=(a&b)<<1;
+            a=a^b;
+            b=tmp;
+        }
+        return a;
     }
 };
