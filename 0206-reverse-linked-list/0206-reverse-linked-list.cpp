@@ -10,16 +10,20 @@
  */
 class Solution {
 public:
+    //BRUTE FORCE
     ListNode* reverseList(ListNode* head) {
-        ListNode* curr=head;
-        ListNode* prev=NULL;
-        ListNode* nextt=NULL;
-        while(curr!=NULL){
-            nextt=curr->next;
-            curr->next=prev;
-            prev=curr;
-            curr=nextt;
+        ListNode* temp=head;
+        stack<int>s;
+        while(temp!=NULL){
+            s.push(temp->val);
+            temp=temp->next;
         }
-        return prev;
+        temp=head;
+        while(temp!=NULL){
+            temp->val=s.top();
+            s.pop();
+            temp=temp->next;
+        }
+        return head;
     }
 };
