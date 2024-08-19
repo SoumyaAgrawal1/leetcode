@@ -2,7 +2,6 @@ class Solution {
 public:
     int missingNumber(vector<int>& nums) {
     int N=nums.size();
-    if(nums.size()==1 and nums[0]==1) return 0;
     // Outer loop that runs from 1 to N:
     for (int i = 1; i <= N; i++) {
 
